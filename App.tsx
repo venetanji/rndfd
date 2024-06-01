@@ -52,7 +52,7 @@ const App = () => {
       negativePrompt: "low res, bad quality",
       width: width,
       height: height,
-      numInferenceSteps: 8,
+      numInferenceSteps: 5,
       guidanceScale: 1.4,
       sdV1: true,
       //beta_schedule: "scaled_linear",
@@ -88,6 +88,7 @@ const App = () => {
         console.log('cleanup')
         if (pipe !== null) {
           pipe.release()
+          setPipe(null)
         }
       }
     }, []);
