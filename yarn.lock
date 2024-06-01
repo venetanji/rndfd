@@ -2388,7 +2388,7 @@
 
 "@venetanji/diffusers.js@https://github.com/venetanji/diffusers-react-native.js.git":
   version "0.0.7"
-  resolved "https://github.com/venetanji/diffusers-react-native.js.git#5597c9a2badd82e2225cf7af991eeb2ec8f8e3f1"
+  resolved "https://github.com/venetanji/diffusers-react-native.js.git#d54d4445dd280eba5a18d84a37d01d0251664481"
   dependencies:
     "@huggingface/hub" "^0.8.5"
     "@types/node" "^16.18.34"
