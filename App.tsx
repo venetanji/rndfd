@@ -32,15 +32,7 @@ const App = () => {
 
   const [imageUri, setImageUri] = useState({uri: 'https://reactnative.dev/img/tiny_logo.png'});
 
-  useEffect(() => {
-    createSession()
-    return () => {
-      console.log('cleanup')
-      if (pipe !== null) {
-        pipe.release()
-      }
-    }
-  }, []);
+
   const generate = async () => {
     if (pipe === null) {
       console.log('Session not created')
@@ -62,6 +54,7 @@ const App = () => {
       height: height,
       numInferenceSteps: 8,
       guidanceScale: 1.4,
+      sdV1: true,
       //beta_schedule: "scaled_linear",
       progressCallback: progressCallback
     })
@@ -89,6 +82,15 @@ const App = () => {
   }
 
   const GeneratedImage = () => {
+    useEffect(() => {
+      createSession()
+      return () => {
+        console.log('cleanup')
+        if (pipe !== null) {
+          pipe.release()
+        }
+      }
+    }, []);
 
     return (
       <Image
